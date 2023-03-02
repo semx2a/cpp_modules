@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 17:26:44 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/02 16:21:56 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/02 17:21:46 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(int ac, char **av) {
 	std::cout << std::endl;
 	C.attack(A.getName());
 	if (C.getEnergyPoints() > 0)
-	A.takeDamage(C.getAttackDamage());
+		A.takeDamage(C.getAttackDamage());
 
 	std::cout << std::endl;
 	A.beRepaired(3);

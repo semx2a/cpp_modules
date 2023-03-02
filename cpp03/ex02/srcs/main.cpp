@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 17:26:44 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/02 16:21:56 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/02 17:22:15 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,26 @@
 #include <cstdlib>
 #include "../inc/ClapTrap.hpp"
 #include "../inc/ScavTrap.hpp"
+#include "../inc/FragTrap.hpp"
 
 int	main(int ac, char **av) {
 
 	ClapTrap	A("Alex");
 	ClapTrap	B("Sam");
 	ScavTrap	C("Serena");
+	FragTrap	D("Wips");
 
 	if (ac != 3)
 		return 1;
 		
 	A.setAttackDamage(atoi(av[1]));
-	B.setAttackDamage(atoi(av[2]));	
+	B.setAttackDamage(atoi(av[2]));
+	
 	
 	std::cout << A;
 	std::cout << B;
 	std::cout << C;
+	std::cout << D;
 	std::cout << std::endl;
 	
 	A.attack(B.getName());
@@ -49,9 +53,9 @@ int	main(int ac, char **av) {
 	C.beRepaired(3);
 	
 	std::cout << std::endl;
-	C.attack(A.getName());
+	C.attack(D.getName());
 	if (C.getEnergyPoints() > 0)
-	A.takeDamage(C.getAttackDamage());
+		A.takeDamage(D.getAttackDamage());
 
 	std::cout << std::endl;
 	A.beRepaired(3);
@@ -60,9 +64,17 @@ int	main(int ac, char **av) {
 	C.guardGate();
 
 	std::cout << std::endl;
+	D.attack(A.getName());
+	if (D.getEnergyPoints() > 0)
+		A.takeDamage(D.getAttackDamage());
+
+	D.highFivesGuys();
+		
+	std::cout << std::endl;
 	std::cout << A;
 	std::cout << B;
 	std::cout << C;
+	std::cout << D;
 	
 	std::cout << std::endl;
 	

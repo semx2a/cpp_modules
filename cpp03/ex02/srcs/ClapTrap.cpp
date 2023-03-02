@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:15:53 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/02 16:20:52 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/02 17:32:32 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ ClapTrap::ClapTrap(ClapTrap const & src) {
 
 ClapTrap::~ClapTrap(void) { 
 	
-	std::cout << "Destructor called." << std::endl;
+	std::cout << "Default Destructor called." << std::endl;
 }
 
 ClapTrap &	ClapTrap::operator=(ClapTrap const & rhs) {

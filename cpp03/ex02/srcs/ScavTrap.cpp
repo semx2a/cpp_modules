@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:38:18 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/02 16:25:17 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/02 17:02:34 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ void	ScavTrap::attack(const std::string & target) {
 	
 	if (this->getEnergyPoints() > 0) {
 		
-		std::cout << this->getName() << " attacks " << target << ", causing "
-		<< this->getAttackDamage() << " points of damage!" << std::endl;
+		std::cout << this->getName() << " attacks " << target << "! "
+		<< this->getAttackDamage() << " damages are inflicted." << std::endl;
 		
 		this->setEnergyPoints(this->getEnergyPoints() - 1);
 	}

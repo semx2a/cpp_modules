@@ -6,7 +6,7 @@
 #    By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 19:14:12 by seozcan           #+#    #+#              #
-#    Updated: 2023/03/02 16:24:44 by seozcan          ###   ########.fr        #
+#    Updated: 2023/03/02 17:24:39 by seozcan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,13 +22,14 @@ IDIR	:=	inc
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::TARGET::
 
-NAME	:=	ScavTrap
+NAME	:=	FragTrap
 
 # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::SOURCES::
 
 SRCS	:=	main.cpp \
 			ClapTrap.cpp \
-			ScavTrap.cpp		
+			ScavTrap.cpp \
+			FragTrap.cpp		
 			
 OBJS	=	$(addprefix $(ODIR)/, $(SRCS:.cpp=.o))
 
