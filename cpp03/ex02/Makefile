@@ -6,7 +6,7 @@
 #    By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 19:14:12 by seozcan           #+#    #+#              #
-#    Updated: 2023/02/25 21:03:17 by seozcan          ###   ########.fr        #
+#    Updated: 2023/03/02 16:24:44 by seozcan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,12 +22,13 @@ IDIR	:=	inc
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::TARGET::
 
-NAME	:=	Fixed00
+NAME	:=	ScavTrap
 
 # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::SOURCES::
 
 SRCS	:=	main.cpp \
-			Fixed.cpp
+			ClapTrap.cpp \
+			ScavTrap.cpp		
 			
 OBJS	=	$(addprefix $(ODIR)/, $(SRCS:.cpp=.o))
 
@@ -120,7 +121,7 @@ clean:		header
 
 fclean:		header clean
 	@rm -f $(NAME)
-	@echo "$(HIORANGE)$(NAME) bin:\t\t\t\t\t[RM]$(NO_COLOR)"
+	@echo "$(HIORANGE)$(NAME) bin:\t\t\t\t\t\t[RM]$(NO_COLOR)"
 
 header:
 	@echo "$(BHIPURPLE)"
