@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 17:26:44 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/01 18:24:46 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/02 16:21:56 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,20 +34,23 @@ int	main(int ac, char **av) {
 	std::cout << std::endl;
 	
 	A.attack(B.getName());
-	B.takeDamage(A.getAttackDamage());
+	if (A.getEnergyPoints() > 0)
+		B.takeDamage(A.getAttackDamage());
 	
 	std::cout << std::endl;
 	B.beRepaired(2);
 	
 	std::cout << std::endl;
 	B.attack(C.getName());
-	C.takeDamage(B.getAttackDamage());
+	if (B.getEnergyPoints() > 0)
+		C.takeDamage(B.getAttackDamage());
 
 	std::cout << std::endl;
 	C.beRepaired(3);
 	
 	std::cout << std::endl;
 	C.attack(A.getName());
+	if (C.getEnergyPoints() > 0)
 	A.takeDamage(C.getAttackDamage());
 
 	std::cout << std::endl;

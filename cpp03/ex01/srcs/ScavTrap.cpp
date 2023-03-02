@@ -6,14 +6,13 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:38:18 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/01 17:52:36 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/02 16:25:17 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 #include "../inc/ScavTrap.hpp"
-
 
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: CONSTRUCTORS::
 
@@ -61,9 +60,26 @@ ScavTrap &	ScavTrap::operator=(ScavTrap const & rhs) {
 
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: MEMBER FUNCTIONS::
 
+void	ScavTrap::attack(const std::string & target) {
+	
+	if (this->getEnergyPoints() > 0) {
+		
+		std::cout << this->getName() << " attacks " << target << ", causing "
+		<< this->getAttackDamage() << " points of damage!" << std::endl;
+		
+		this->setEnergyPoints(this->getEnergyPoints() - 1);
+	}
+	else
+		std::cout << this->getName() << " has not enough energy to attack " 
+		<< target << "." << std::endl;
+}
+
 void	ScavTrap::guardGate(void) {
 	
-	std::cout << this->getName() << " entered Gate Keeper mode." << std::endl;
+	if (this->getEnergyPoints() > 0)
+		std::cout << this->getName() << " entered Gate Keeper mode." << std::endl;
+	else
+		std::cout << this->getName() << " has not enough energy to enter Gate Keeper mode." << std::endl;
 }
 
 // ::::::::::::::::::::::::::::::::::::::::::::::: OUTPUT OPERATOR OVERLOADING::
