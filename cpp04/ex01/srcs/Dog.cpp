@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 18:25:42 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/04 20:43:45 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/04 23:59:39 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,40 @@
 
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: CONSTRUCTORS::
 
-Dog::Dog(void) { this->setType("Dog"); }
+Dog::Dog(void) { 
+    
+    std::cout << "Dog constructor" << std::endl;
+    
+    this->setType("Dog");
+    this->_noggin = new Brain();
+}
 
 Dog::Dog(std::string const type) { this->setType(type); }
 
 Dog::Dog(Dog const & src) { *this = src; }
 
-Dog::~Dog(void) { }
+Dog::~Dog(void) { 
+    
+    std::cout << "Dog destructor" << std::endl;
+
+    delete this->getBrain();
+}
 
 Dog &	Dog::operator=(Dog const & rhs) {
 
     if (this != &rhs) {
         this->setType(rhs.getType());
+        this->setBrain(rhs.getBrain());
     }
     
 	return *this;
 }
+
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: ACCESSORS::
+
+void        Dog::setBrain(Brain* const ideas) { this->_noggin = ideas; }
+
+Brain*      Dog::getBrain(void) const { return this->_noggin; }
 
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: MEMBER FUNCTIONS::
 

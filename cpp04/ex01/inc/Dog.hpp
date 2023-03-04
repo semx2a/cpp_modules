@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 18:20:37 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/04 20:50:30 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/04 23:50:30 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <string>
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Dog : public Animal {
 
@@ -26,7 +27,14 @@ class Dog : public Animal {
         
 		Dog &	operator=(Dog const & rhs);
 		
+		void	setBrain(Brain* const);
+
+		Brain*	getBrain(void) const;
+		
 		void	makeSound(void) const;
+
+	private:
+		Brain*	_noggin;
 
 };
 

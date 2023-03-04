@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 18:20:37 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/04 23:50:51 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/05 00:13:13 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
 # include <string>
-# include "Animal.hpp"
-# include "Brain.hpp"
 
-class Cat : public Animal {
+class Brain {
 
 	public:
-		Cat(void);
-        Cat(std::string const);
-        Cat(Cat const & src);
-        ~Cat(void);
+		Brain(void);
+        Brain(Brain const & src);
+        ~Brain(void);
         
-		Cat &	operator=(Cat const & rhs);
+		Brain &	operator=(Brain const & rhs);
+		                
+		void		setIdeas(std::string* const);
 		
-		void	setBrain(Brain* const);
-
-		Brain*	getBrain(void) const;
+		std::string*	getIdeas(void) const;
 		
-		void	makeSound(void) const;
-	
 	private:
-		Brain*	_noggin;
+		std::string*	_ideas;
 };
 
-std::ostream &  operator<<(std::ostream & o, Cat const & c);
+std::ostream &  operator<<(std::ostream & o, Brain const & b);
 
 #endif

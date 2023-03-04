@@ -6,7 +6,7 @@
 #    By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 19:14:12 by seozcan           #+#    #+#              #
-#    Updated: 2023/03/04 20:56:45 by seozcan          ###   ########.fr        #
+#    Updated: 2023/03/05 00:15:47 by seozcan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,7 @@ SRCS	:=	main.cpp \
 			Animal.cpp \
 			Cat.cpp \
 			Dog.cpp \
-			WrongAnimal.cpp \
-			WrongCat.cpp
+			Brain.cpp
 			
 OBJS	=	$(addprefix $(ODIR)/, $(SRCS:.cpp=.o))
 
