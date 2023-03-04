@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 18:20:37 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/04 23:34:41 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/04 20:50:26 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
 # include <string>
+# include "Animal.hpp"
 
-class Animal {
+class Cat : public Animal {
 
 	public:
-		Animal(void);
-        Animal(std::string const);
-        Animal(Animal const & src);
-        virtual ~Animal(void);
+		Cat(void);
+        Cat(std::string const);
+        Cat(Cat const & src);
+        ~Cat(void);
         
-		Animal &	operator=(Animal const & rhs);
-		                
-		void		setType(std::string const);
+		Cat &	operator=(Cat const & rhs);
 		
-		std::string	getType(void) const;
+		void	makeSound(void) const;
 
-		virtual void	makeSound(void) const;
-	
-	protected:
-		std::string	_type;
 };
 
-std::ostream &  operator<<(std::ostream & o, Animal const & a);
+std::ostream &  operator<<(std::ostream & o, Cat const & c);
 
 #endif
