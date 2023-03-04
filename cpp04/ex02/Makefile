@@ -6,7 +6,7 @@
 #    By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 19:14:12 by seozcan           #+#    #+#              #
-#    Updated: 2023/02/25 21:03:17 by seozcan          ###   ########.fr        #
+#    Updated: 2023/03/05 00:43:12 by seozcan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,12 +22,15 @@ IDIR	:=	inc
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::TARGET::
 
-NAME	:=	Fixed00
+NAME	:=	cats_n_dogs02
 
 # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::SOURCES::
 
 SRCS	:=	main.cpp \
-			Fixed.cpp
+			AAnimal.cpp \
+			Cat.cpp \
+			Dog.cpp \
+			Brain.cpp
 			
 OBJS	=	$(addprefix $(ODIR)/, $(SRCS:.cpp=.o))
 
