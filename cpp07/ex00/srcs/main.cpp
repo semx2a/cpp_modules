@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 20:13:19 by seozcan           #+#    #+#             */
-/*   Updated: 2023/08/31 17:05:11 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/09/01 13:30:03 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,35 @@ void display(T lhs, T rhs) {
 
 	std::cout << s.str();
 }
+
+/* class Awesome {
+	public:
+	Awesome(void) : _n(0) {}
+	Awesome(int n) : _n(n) {}
+	Awesome &operator=(Awesome &a) {this->_n = a._n; return (*this);}
+	bool operator==(Awesome const &a) const {return (this->_n == a._n);}
+	bool operator!=(Awesome const &a) const {return (this->_n != a._n);}
+	bool operator>(Awesome const &a) const {return (this->_n > a._n);}
+	bool operator<(Awesome const &a) const {return (this->_n < a._n);}
+	bool operator>=(Awesome const &a) const {return (this->_n >= a._n);}
+	bool operator<=(Awesome const &a) const {return (this->_n <= a._n);}
+	int getN(void) const {return (this->_n);}
+	private:
+	int _n;
+};
+std::ostream &operator<<(std::ostream &o, Awesome const &a) {o << a.getN(); return (o);}
+
+int main(void) {
+	
+	Awesome a(1), b(2);
+
+	swap(a, b);
+	std::cout << a << " " << b << std::endl;
+	std::cout << max(a, b) << std::endl;
+	std::cout << min(a, b) << std::endl;
+	return 0;
+}
+ */
 
 int	main(void) {
 	

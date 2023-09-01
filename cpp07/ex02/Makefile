@@ -6,7 +6,7 @@
 #    By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 19:14:12 by seozcan           #+#    #+#              #
-#    Updated: 2023/08/31 17:53:31 by seozcan          ###   ########.fr        #
+#    Updated: 2023/09/01 00:43:28 by seozcan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,11 +87,11 @@ vpath %.o $(ODIR)
 all:			header h2 message $(NAME)
 
 $(ODIR)/%.o:	%.cpp
-	@$(CPP) $(WFLAGS) $(INCLUDE_FLAGS) -c $< -o $@ 
+	@$(CPP) $(WFLAGS) $(GFLAG) $(INCLUDE_FLAGS) -c $< -o $@ 
 	@echo "$(HIGREEN)compilation:[OK]$(NO_COLOR)" | awk -F ':' '{ printf "%-61s %s\n", $$1 ":", $$2 }'
 
 $(NAME):		$(OBJS)	
-	@$(CPP) $(WFLAGS) $(OBJS) -o $(NAME)
+	@$(CPP) $(WFLAGS) $(GFLAG) $(OBJS) -o $(NAME)
 	@echo "$(HIGREEN)mandatory exe:[OK]$(NO_COLOR)" | awk -F ':' '{ printf "%-61s %s\n", $$1 ":", $$2 }'
 
 $(OBJS):		| $(ODIR)

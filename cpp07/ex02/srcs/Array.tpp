@@ -6,18 +6,14 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 22:45:32 by seozcan           #+#    #+#             */
-/*   Updated: 2023/08/31 18:00:00 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/09/01 12:40:17 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Array.hpp"
 
 template <typename T>
-Array<T>::Array(void) {
-	
-	this->_arr = NULL;
-	this->_len = 0;
-}
+Array<T>::Array(void) : _arr(0), _len(0) {}
 
 template <typename T>
 Array<T>::Array(unsigned int n) {
@@ -27,8 +23,8 @@ Array<T>::Array(unsigned int n) {
 }
 
 template <typename T>
-Array<T>::Array(Array<T> const &a) {
-	
+Array<T>::Array(Array<T> const &a) : _arr(0), _len(0){
+
 	*this = a;
 }
 
@@ -44,7 +40,7 @@ Array<T> &Array<T>::operator=(Array<T> const &a) {
 	
 	if (this != &a)
 	{
-		if (this->_arr)
+		if (this->_len > 0)
 			delete [] this->_arr;
 		this->_arr = new T[a._len];
 		this->_len = a._len;
@@ -69,9 +65,14 @@ size_t Array<T>::size(void) const {
 }
 
 template <typename T>
-std::ostream &operator<<(std::ostream &o, Array<T> const &a) {
+std::ostream &operator<<(std::ostream &o, Array<T> &a) {
 	
-	for (int i = 0; i < a.size(); i++)
-		o << "arr[" << i << "] = " << a[i] << std::endl;
+	if (a.size() == 0)
+		o << "Array is empty" << std::endl;
+	else
+	{
+		for (int i = 0; static_cast<size_t>(i) < a.size(); i++)
+			o << "arr[" << i << "] = " << a[i] << std::endl;
+	}
 	return (o);
 }

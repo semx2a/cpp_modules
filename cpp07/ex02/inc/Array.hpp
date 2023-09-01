@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 20:25:06 by seozcan           #+#    #+#             */
-/*   Updated: 2023/08/31 18:01:29 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/09/01 12:40:20 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Array {
 };
 
 template <typename T>
-std::ostream &operator<<(std::ostream &o, Array<T> const &a);
+std::ostream &operator<<(std::ostream &o, Array<T> &a);
 
 # include "../srcs/Array.tpp"
 
