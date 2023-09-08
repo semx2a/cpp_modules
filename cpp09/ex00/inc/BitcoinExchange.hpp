@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:10:58 by seozcan           #+#    #+#             */
-/*   Updated: 2023/09/06 23:46:14 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/09/08 00:16:18 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,18 @@ class BitcoinExchange {
 		
 		std::string const &	getFilePath(void) const;
 		std::string const &	getData(void) const;
+
+		void	checkDate(void);
+		void	checkValue(void);
+		void	parseFile(void);
+		void	displayValuePrice(void);
+		
 			
 	private:
-		std::string		_filePath;
-		std::string		_data;
-		std::map<std::string, int> ExchangeRate; 
+		std::string					_filePath;
+		std::string					_data;
+		std::ifstream				_file;
+		std::map<std::string, int>	_ExchangeRate; 
 };
 
 std::ostream & operator<<(std::ostream &, BitcoinExchange const &);

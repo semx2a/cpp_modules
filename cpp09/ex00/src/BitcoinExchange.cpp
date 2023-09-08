@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:10:56 by seozcan           #+#    #+#             */
-/*   Updated: 2023/09/06 23:37:19 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/09/07 23:54:18 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ std::string const &	BitcoinExchange::getFilePath(void) const { return this->_fil
 std::string const &	BitcoinExchange::getData(void) const { return this->_data; }
 
 // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: METHODS::
+
+
 
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::: OVERLOAD OPERATORS::
 
