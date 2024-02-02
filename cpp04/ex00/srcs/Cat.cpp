@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 18:25:42 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/04 20:43:45 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/05 01:14:44 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,20 @@
 
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: CONSTRUCTORS::
 
-Cat::Cat(void) { this->setType("Cat"); }
+Cat::Cat(void) { 
+    
+    this->setType("Cat"); 
+    std::cout << "Cat constructor" << std::endl;
+}
 
 Cat::Cat(std::string const type) { this->setType(type); }
 
 Cat::Cat(Cat const & src) { *this = src; }
 
-Cat::~Cat(void) { }
+Cat::~Cat(void) {
+
+    std::cout << "Cat destructor" << std::endl;
+ }
 
 Cat &	Cat::operator=(Cat const & rhs) {
 

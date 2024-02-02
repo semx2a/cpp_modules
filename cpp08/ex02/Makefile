@@ -6,7 +6,7 @@
 #    By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 19:14:12 by seozcan           #+#    #+#              #
-#    Updated: 2023/08/30 14:32:48 by seozcan          ###   ########.fr        #
+#    Updated: 2023/09/05 19:11:17 by seozcan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,13 +22,11 @@ IDIR	:=	inc
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::TARGET::
 
-NAME	:=	Convert
+NAME	:=	MutantStack
 
 # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::SOURCES::
 
-SRCS	:=	main.cpp \
-			ScalarConverter.cpp \
-			utils.cpp
+SRCS	:=	main.cpp
 			
 OBJS	=	$(addprefix $(ODIR)/, $(SRCS:.cpp=.o))
 

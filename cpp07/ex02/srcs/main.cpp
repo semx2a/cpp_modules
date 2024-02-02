@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 16:32:17 by seozcan           #+#    #+#             */
-/*   Updated: 2023/09/01 14:16:57 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/09/05 12:07:27 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,14 @@ int main(int, char**)
         numbers[-2] = 0;
     }
     catch(const std::exception& e) {
-        std::cerr << e.what() << '\n';
+        std::cerr << "Trying to access numbers[-2] : " << e.what() << '\n';
     }
     
     try {
         numbers[MAX_VAL] = 0;
     }
     catch(const std::exception& e) {
-        std::cerr << e.what() << '\n';
+        std::cerr << "Trying to access numbers[MAX_VAL] : " << e.what() << '\n';
     }
     
     for (int i = 0; i < MAX_VAL; i++) {
@@ -80,11 +80,10 @@ int main(int, char**)
     
     Array<float> floats(10);
     for (int i = 0; i < 10; i++) {
-        floats[i] = static_cast<float>(rand()) / static_cast<float>(RAND_MAX / MAX_VAL2);
+        floats[i] = static_cast<float>(rand()) / (static_cast<float>(RAND_MAX) / MAX_VAL2);
     }
     displayClassArray(floats);
 
-    
     Array<std::string> strings(5);
     strings[0] = "Lorem";
     strings[1] = "ipsum";
@@ -92,6 +91,12 @@ int main(int, char**)
     strings[3] = "sit";
     strings[4] = "amet";
     displayClassArray(strings);
+
+    Array<int> empty;
+    Array<int> alloc(42);
+    empty = alloc;
+    empty[41] = 42;
+    displayClassArray(empty);
     
     return 0;
 }

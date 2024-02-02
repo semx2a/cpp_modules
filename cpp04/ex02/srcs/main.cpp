@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 18:48:21 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/05 00:43:01 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/05 17:23:57 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,28 @@
 #include "../inc/Cat.hpp"
 #include "../inc/Dog.hpp"
 
+#define NO_COLOR	"\033[m"
+#define BHIGREEN	"\033[1;92m"
+#define BHIORANGE	"\033[1;93m"
+#define BHIPURPLE	"\033[1;95m"
 
 int	main()
 {
-	const AAnimal* 		i 		= new Cat();
-	const AAnimal* 		j 		= new Dog();
+	const AAnimal* i	= new Cat();
+	const AAnimal* j	= new Dog();
 
-	std::cout << i->getType() << std::endl;
-	std::cout << j->getType() << std::endl;
-	
-	std::cout << std::endl;
+	std::cout << std::endl << BHIGREEN <<"Make sound tests:" << NO_COLOR << std::endl;
+
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 
+	std::cout << std::endl;
 	delete i;
 	delete j;
 	
-	std::cout << std::endl;
-
-	const AAnimal* 		meta[20];
+	std::cout << std::endl << BHIORANGE << "Animal array containing dogs and cats:" << NO_COLOR << std::endl;
+	//Animal array test
+	const AAnimal* meta[20];
 	
 	for (int i = 0; i < 20; i++) {
 		
@@ -43,10 +46,28 @@ int	main()
 		else
 			meta[i] = new Dog();
 	}
-
+	
+	std::cout << std::endl;
 	for (int i = 0; i < 20; i++) {
 		
 		delete meta[i];
 	}
+
+	//Deep copy test
+	std::cout << std::endl << BHIPURPLE << "Deep copy tests" << NO_COLOR << std::endl;
+	Dog basic;
+	{
+		Dog tmp = basic;
+	}
+
+	std::cout << std::endl;
+	Cat puss;
+	{
+		Cat tmp1 = puss;
+	}
+
+	//AAnimal instanciation
+	//const AAnimal* notGoingToWork = new AAnimal();
+	
 	return 0;
 }

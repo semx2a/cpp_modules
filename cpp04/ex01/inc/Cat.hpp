@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 18:20:37 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/04 23:50:51 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/05 16:59:53 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 # include <string>
 # include "Animal.hpp"
 # include "Brain.hpp"
+
+# define NO_COLOR	"\033[m"
+# define BHIGREEN	"\033[1;92m"
+# define BHIORANGE	"\033[1;93m"
+# define BHIBLUE	"\033[1;94m"
+# define BHIPURPLE	"\033[1;95m"
 
 class Cat : public Animal {
 

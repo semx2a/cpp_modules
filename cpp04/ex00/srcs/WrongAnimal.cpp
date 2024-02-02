@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 18:25:42 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/04 20:43:45 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/05 01:17:28 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,19 @@
 
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: CONSTRUCTORS::
 
-WrongAnimal::WrongAnimal(void) :_type("WrongAnimal"){ }
+WrongAnimal::WrongAnimal(void) :_type("WrongAnimal"){
+
+    std::cout << "WrongAnimal constructor" << std::endl;
+ }
 
 WrongAnimal::WrongAnimal(std::string const type) :_type(type) { }
 
 WrongAnimal::WrongAnimal(WrongAnimal const & src) { *this = src; }
 
-WrongAnimal::~WrongAnimal(void) { }
+WrongAnimal::~WrongAnimal(void) {
+
+    std::cout << "WrongAnimal destructor" << std::endl;
+}
 
 WrongAnimal &	WrongAnimal::operator=(WrongAnimal const & rhs) {
 

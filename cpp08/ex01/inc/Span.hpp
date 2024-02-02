@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 18:30:07 by seozcan           #+#    #+#             */
-/*   Updated: 2023/09/02 16:46:59 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/09/05 17:11:40 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,12 @@ class Span {
 		void						setMaxElements(unsigned int);
 		std::vector<int> const & 	getSpan(void) const;
 		unsigned int				getMaxElements(void) const;
-		
+
 		void			addNumber(int); 
+		void			addNumber(std::vector<int>::iterator, std::vector<int>::iterator);
 		unsigned int 	shortestSpan(void);
 		unsigned int 	longestSpan(void);
+		
 	
 	private:
 

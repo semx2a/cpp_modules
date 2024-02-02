@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 18:25:42 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/04 19:11:06 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/05 01:17:10 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,20 @@
 
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: CONSTRUCTORS::
 
-WrongCat::WrongCat(void) { this->setType("WrongCat"); }
+WrongCat::WrongCat(void) { 
+	
+	std::cout << "WrongCat constructor" << std::endl;
+	this->setType("WrongCat");
+}
 
 WrongCat::WrongCat(std::string const type) { this->setType(type); }
 
 WrongCat::WrongCat(WrongCat const & src) { *this = src; }
 
-WrongCat::~WrongCat(void) { }
+WrongCat::~WrongCat(void) {
+
+	std::cout << "WrongCat destructor" << std::endl;
+}
 
 WrongCat &	WrongCat::operator=(WrongCat const & rhs) {
 
@@ -32,6 +39,13 @@ WrongCat &	WrongCat::operator=(WrongCat const & rhs) {
 	}
     
 	return *this;
+}
+
+//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: MEMBER FUNCTIONS::
+
+void WrongCat::makeSound(void) const {
+    
+    std::cout << this->getType() << " says \"distorted Meow\"" << std::endl;
 }
 
 // ::::::::::::::::::::::::::::::::::::::::::::::: OUTPUT OPERATOR OVERLOADING::

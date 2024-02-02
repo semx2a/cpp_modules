@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 18:25:42 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/04 20:43:45 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/05 01:14:11 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,20 @@
 
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: CONSTRUCTORS::
 
-Dog::Dog(void) { this->setType("Dog"); }
+Dog::Dog(void) { 
+    
+    std::cout << "Dog constructor" << std::endl;
+    this->setType("Dog"); 
+}
 
 Dog::Dog(std::string const type) { this->setType(type); }
 
 Dog::Dog(Dog const & src) { *this = src; }
 
-Dog::~Dog(void) { }
+Dog::~Dog(void) { 
+
+    std::cout << "Dog destructor" << std::endl;
+}
 
 Dog &	Dog::operator=(Dog const & rhs) {
 

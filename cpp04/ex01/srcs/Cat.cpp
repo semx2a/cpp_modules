@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 18:25:42 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/05 00:00:38 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/05 17:16:09 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 Cat::Cat(void) { 
 
-    std::cout << "Cat constructor" << std::endl;
+    std::cout << BHIORANGE << "Cat " << NO_COLOR << "constructor" << std::endl;
         
     this->setType("Cat");
     this->_noggin = new Brain();
@@ -27,11 +27,15 @@ Cat::Cat(void) {
 
 Cat::Cat(std::string const type) { this->setType(type); }
 
-Cat::Cat(Cat const & src) { *this = src; }
+Cat::Cat(Cat const & src) { 
+    
+    this->_type = src.getType();
+    this->_noggin = new Brain(*src.getBrain());
+}
 
 Cat::~Cat(void) {
 
-    std::cout << "Cat destructor" << std::endl;
+    std::cout << BHIORANGE << "Cat " << NO_COLOR <<  "destructor" << std::endl;
 
     delete this->getBrain();
 }
@@ -39,8 +43,12 @@ Cat::~Cat(void) {
 Cat &	Cat::operator=(Cat const & rhs) {
 
     if (this != &rhs) {
+    
         this->setType(rhs.getType());
-        this->setBrain(rhs.getBrain());
+        if (this->_noggin) {
+            delete this->_noggin;
+        }
+        this->_noggin = new Brain (*rhs.getBrain());
     }
     
 	return *this;
@@ -56,7 +64,7 @@ Brain*      Cat::getBrain(void) const { return this->_noggin; }
 
 void Cat::makeSound(void) const {
     
-    std::cout << this->getType() << " says \"Meow\"" << std::endl;
+    std::cout << BHIORANGE << this->getType() << NO_COLOR << " says \"Meow\"" << std::endl;
 }
 
 // ::::::::::::::::::::::::::::::::::::::::::::::: OUTPUT OPERATOR OVERLOADING::

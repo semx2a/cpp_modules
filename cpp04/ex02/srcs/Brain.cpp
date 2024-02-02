@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 18:25:42 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/05 00:16:15 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/05 17:19:23 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,30 @@
 
 Brain::Brain(void) {
     
-    std::cout << "Brain constructor" << std::endl;
+    std::cout << BHIPURPLE <<"Brain " << NO_COLOR << "constructor" << std::endl;
 
     this->_ideas = new std::string[100];
+    
+    for (int i = 0; i < 100; i++) {
+        
+        this->_ideas[i] = "Original idea";
+    }
  }
 
-Brain::Brain(Brain const & src) { *this = src; }
+Brain::Brain(Brain const & src) { 
+    
+    std::string *tmp = src.getIdeas();
+    
+    this->_ideas = new std::string[100];
+    for (int i = 0; i < 100; i++) {
+            
+        this->_ideas[i] = tmp[i];
+    }
+}
 
 Brain::~Brain(void) {
 
-    std::cout << "Brain destructor" << std::endl;
+    std::cout << BHIPURPLE << "Brain " << NO_COLOR << "destructor" << std::endl;
 
     delete [] this->getIdeas();
 }
@@ -36,7 +50,12 @@ Brain::~Brain(void) {
 Brain &	Brain::operator=(Brain const & rhs) {
 
     if (this != &rhs) {
-        this->_ideas = rhs.getIdeas();
+        
+
+        for (int i = 0; i < 100; i++) {
+            
+            this->_ideas[i] = rhs._ideas[i];
+        }
     }
     
 	return *this;

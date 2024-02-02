@@ -6,18 +6,26 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:10:58 by seozcan           #+#    #+#             */
-/*   Updated: 2023/09/08 00:16:18 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/09/10 12:55:46 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BITCOINEXCHANGE_HPP
 # define BITCOINEXCHANGE_HPP
 
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <algorithm>
-#include <map>
+# include <iostream>
+# include <string>
+# include <sstream>
+# include <fstream>
+# include <algorithm>
+# include <map>
+
+# include <cstdlib>
+
+# include "tools.hpp"
+# include "print.hpp"
+
+typedef std::map<std::string, float> t_map;
 
 class BitcoinExchange {
 	
@@ -28,24 +36,31 @@ class BitcoinExchange {
 		~BitcoinExchange();
 		
 		BitcoinExchange &	operator=(BitcoinExchange const &);
-
-		void				setFilePath(std::string const);
-		void				setData(std::string const);
 		
-		std::string const &	getFilePath(void) const;
-		std::string const &	getData(void) const;
+		std::string	getInputPath(void) const;
+		std::string	getDatabasePath(void) const;
+		t_map 		getDataBase(void) const;
 
-		void	checkDate(void);
-		void	checkValue(void);
-		void	parseFile(void);
-		void	displayValuePrice(void);
+		void		setInputPath(std::string const);
+		void		setDatabasePath(std::string const);
+		void		setDataBase(t_map const);
+		
+		void 	displayValuePrice(void);
 		
 			
 	private:
-		std::string					_filePath;
-		std::string					_data;
-		std::ifstream				_file;
-		std::map<std::string, int>	_ExchangeRate; 
+		std::string			_inputPath;
+		std::string			_databasePath;
+		std::ifstream		_file;
+		std::stringstream	_buffer;
+		t_map				_dataBase;
+		
+		float			_getExchangeRate(std::string const);
+		bool			_checkValue(float const);
+		bool			_checkDate(std::string const);
+		void			_makeMap();
+		void			_openFile(std::string const &);
+		void			_parseDatabase(std::string const &);
 };
 
 std::ostream & operator<<(std::ostream &, BitcoinExchange const &);

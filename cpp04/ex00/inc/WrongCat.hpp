@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 18:20:37 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/04 20:50:45 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/05 01:10:30 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ class WrongCat : public WrongAnimal {
         ~WrongCat(void);
         
 		WrongCat &	operator=(WrongCat const & rhs);
+
+		void		makeSound(void) const;
+
 };
 
 std::ostream &  operator<<(std::ostream & o, WrongCat const & wc);

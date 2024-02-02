@@ -3,10 +3,11 @@ ifndef SETTINGS_MK
 
 NAME	= btc
 SRC		= $Smain.cpp \
-			$SBitcoinExchange.cpp
+			$SBitcoinExchange.cpp \
+			$Stools.cpp
 
-CC 		= c++
-CFLAGS	+= -Wall -Werror -Wextra -std=c++98
-LDFLAGS	+=
+CXX			= c++
+CXXFLAGS	+= -Wall -Werror -Wextra -std=c++98
+LDFLAGS		+=
 
 endif

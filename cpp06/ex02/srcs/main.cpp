@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 19:09:20 by seozcan           #+#    #+#             */
-/*   Updated: 2023/08/30 19:34:29 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/09/04 16:24:49 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "../inc/C.hpp"
 #include <iostream>
 #include <exception>
+#include <ctime>
 #include <cstdlib>
 
 Base * generate(void) {

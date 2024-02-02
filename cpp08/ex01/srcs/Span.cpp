@@ -6,11 +6,13 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 18:45:10 by seozcan           #+#    #+#             */
-/*   Updated: 2023/09/02 17:16:26 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/09/05 17:20:07 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Span.hpp"
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::CONSTRUCTORS::
 
 Span::Span(void) : _span(), _maxElements(0) {}
 
@@ -24,6 +26,8 @@ Span::Span(Span const& rhs) {
 		*this = rhs;
 }
 
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::OPERATORS::
+
 Span&	Span::operator=(Span const& rhs) {
 	if (this != &rhs)
 	{
@@ -33,6 +37,8 @@ Span&	Span::operator=(Span const& rhs) {
 	return (*this);
 }
 
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::ACCESSORS::
+
 void	Span::setSpan(std::vector<int> span) { this->_span = span; }
 
 void	Span::setMaxElements(unsigned int n) { this->_maxElements = n; }
@@ -41,16 +47,20 @@ std::vector<int> const &	Span::getSpan(void) const { return (this->_span); }
 
 unsigned int	Span::getMaxElements(void) const { return (this->_maxElements); }
 
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::METHODS::
+
 void 	Span::addNumber(int n) {
 	
-	try {
-		if (this->getSpan().size() == this->getMaxElements())
-			throw std::exception();
-		this->_span.push_back(n);
-	}
-	catch (std::exception &e) {
-		std::cerr << "addNumber: " << e.what() << std::endl;
-	}
+	if (this->getSpan().size() == this->getMaxElements())
+		throw std::exception();
+	this->_span.push_back(n);
+}
+
+void	Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end) {
+
+	if (this->getSpan().size() + std::distance(begin, end) > this->getMaxElements())
+		throw std::exception();
+	this->_span.insert(this->_span.end(), begin, end);
 }
 
 unsigned int 	Span::shortestSpan(void) {
@@ -93,6 +103,8 @@ unsigned int 	Span::longestSpan(void) {
 	max = *std::max_element(this->getSpan().begin(), this->getSpan().end());
 	return (max - min);
 }
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::OVERTLOADING OPERATORS::
 
 std::ostream &operator<<(std::ostream &o, Span const &s) {
 	

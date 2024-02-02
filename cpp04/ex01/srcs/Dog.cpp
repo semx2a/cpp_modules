@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 18:25:42 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/04 23:59:39 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/05 17:17:02 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 Dog::Dog(void) { 
     
-    std::cout << "Dog constructor" << std::endl;
+    std::cout << BHIGREEN << "Dog " << NO_COLOR << "constructor" << std::endl;
     
     this->setType("Dog");
     this->_noggin = new Brain();
@@ -27,11 +27,15 @@ Dog::Dog(void) {
 
 Dog::Dog(std::string const type) { this->setType(type); }
 
-Dog::Dog(Dog const & src) { *this = src; }
+Dog::Dog(Dog const & src) { 
+    
+    this->_type = src.getType();
+    this->_noggin = new Brain(*src.getBrain()); 
+}
 
 Dog::~Dog(void) { 
     
-    std::cout << "Dog destructor" << std::endl;
+    std::cout << BHIGREEN << "Dog " << NO_COLOR << "destructor" << std::endl;
 
     delete this->getBrain();
 }
@@ -39,8 +43,12 @@ Dog::~Dog(void) {
 Dog &	Dog::operator=(Dog const & rhs) {
 
     if (this != &rhs) {
+        
         this->setType(rhs.getType());
-        this->setBrain(rhs.getBrain());
+        if (this->_noggin) {
+            delete this->_noggin;
+        }
+        this->_noggin = new Brain (*rhs.getBrain());
     }
     
 	return *this;
@@ -56,7 +64,7 @@ Brain*      Dog::getBrain(void) const { return this->_noggin; }
 
 void Dog::makeSound(void) const {
     
-    std::cout << this->getType() << " says \"Waf\"" << std::endl;
+    std::cout << BHIGREEN << this->getType() << NO_COLOR << " says \"Waf\"" << std::endl;
 }
 
 // ::::::::::::::::::::::::::::::::::::::::::::::: OUTPUT OPERATOR OVERLOADING::
