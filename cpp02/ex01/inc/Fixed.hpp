@@ -6,14 +6,14 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:51:54 by seozcan           #+#    #+#             */
-/*   Updated: 2023/02/27 19:51:47 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/03 12:30:36 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
-#include <iostream>
+# include <iostream>
 
 class Fixed {
 
@@ -38,6 +38,9 @@ class Fixed {
 		
 		int					_val;
 		static int const	_fractionalBits = 8;
+		static int const	_wholeBits = 8;
+		static int const	_maxVal = (1 << (_wholeBits + _fractionalBits - 1)) - 1;
+		static int const	_minVal = -_maxVal;
 };
 
 std::ostream &				operator<<(std::ostream & o, Fixed const & i);

@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:38:14 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/02 17:19:31 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/03 16:10:32 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class ScavTrap : public ClapTrap {
 
 		ScavTrap &	operator=(ScavTrap const & rhs);
 
-		void	attack(const std::string & target);
-		void	guardGate(void);
+		void		attack(const std::string & target);
+		void		guardGate(void);
 };
 
 std::ostream &	operator<<(std::ostream & o, ScavTrap const & s);

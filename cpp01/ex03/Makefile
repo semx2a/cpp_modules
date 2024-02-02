@@ -6,7 +6,7 @@
 #    By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 19:14:12 by seozcan           #+#    #+#              #
-#    Updated: 2023/02/20 15:59:31 by seozcan          ###   ########.fr        #
+#    Updated: 2024/02/02 15:37:15 by seozcan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ PROJ	:=
 
 ODIR	:=	objs
 
-SDIR	:=	srcs
+SDIR	:=	src
 
 IDIR	:=	inc
 
@@ -26,12 +26,12 @@ NAME	:=	Violence
 
 # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::SOURCES::
 
-SRCS	:=	main.cpp \
+SRC	:=	main.cpp \
 			Weapon.cpp \
 			HumanA.cpp \
 			HumanB.cpp
 			
-OBJS	=	$(addprefix $(ODIR)/, $(SRCS:.cpp=.o))
+OBJS	=	$(addprefix $(ODIR)/, $(SRC:.cpp=.o))
 
 # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::COMPILERS::
 

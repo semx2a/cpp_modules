@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 17:26:44 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/02 16:01:15 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/03 14:23:44 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,15 @@
 
 int	main(int ac, char **av) {
 
+	if (ac != 3) { 
+		
+		std::cout << "usage: ./bin <attack damage points> <attack damage points>" << std::endl;
+		return 1;
+	}
+	
 	ClapTrap	A("Alex");
 	ClapTrap	B("Sam");
-
-	if (ac != 3)
-		return 1;
-		
+	
 	A.setAttackDamage(atoi(av[1]));
 	B.setAttackDamage(atoi(av[2]));	
 	

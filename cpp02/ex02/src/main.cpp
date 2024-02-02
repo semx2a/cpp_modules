@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 19:45:36 by seozcan           #+#    #+#             */
-/*   Updated: 2023/02/27 19:55:56 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/03 12:29:27 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,16 @@ int main(void) {
 	std::cout << ++a << std::endl;
 	std::cout << a << std::endl;
 	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
+	std::cout << a << std::endl << std::endl;
 	
 	std::cout << b << std::endl;
 	
 	std::cout << "max is " << Fixed::max(a, b) << std::endl;
-	std::cout << "min is " << Fixed::min(a, b) << std::endl;
+	std::cout << "min is " << Fixed::min(a, b) << std::endl << std::endl;
 
+
+	std::cout << "a:" << a << std::endl;
+	std::cout << "b:" << b << std::endl;
 	std::cout << "a + b = " << a + b << std::endl;
 	std::cout << "a - b = " << a - b << std::endl;
 	std::cout << "a * b = " << a * b << std::endl;

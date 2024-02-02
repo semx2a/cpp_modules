@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 19:06:48 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/01 14:47:14 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/03 12:31:09 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ Fixed::Fixed(int const val) : _val(val << _fractionalBits) {
 Fixed::Fixed(float const val) : _val((int)roundf(val * (1 << _fractionalBits))) {
 
 	std::clog << "Float constructor called" << std::endl;
+		
+	if (this->getRawBits() < _minVal || this->getRawBits() > _maxVal)
+		std::cout << "Fixed point value is out of range." << std::endl;
 }
 
 Fixed::~Fixed(void) { 

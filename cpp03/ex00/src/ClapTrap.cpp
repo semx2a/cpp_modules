@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:15:53 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/02 17:32:44 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/03 16:10:51 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,8 +116,8 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 // ::::::::::::::::::::::::::::::::::::::::::::::: OUTPUT OPERATOR OVERLOADING::
 
 std::ostream &	operator<<(std::ostream & o, ClapTrap const & c) {
+	
 	return o << c.getName() << " has " << c.getHitPoints() << " hit points, "
 				<< c.getEnergyPoints() << " energy points, and " 
 				<< c.getAttackDamage() << " attack damage points." << std::endl; 
-
 }

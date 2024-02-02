@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:38:18 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/02 17:02:02 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/03 16:12:30 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	ScavTrap::attack(const std::string & target) {
 	if (this->getEnergyPoints() > 0) {
 		
 		std::cout << this->getName() << " attacks " << target << "! "
-		<< this->getAttackDamage() << " damages are inflicted!" << std::endl;
+		<< this->getAttackDamage() << " damages are inflicted." << std::endl;
 		
 		this->setEnergyPoints(this->getEnergyPoints() - 1);
 	}
@@ -85,8 +85,8 @@ void	ScavTrap::guardGate(void) {
 // ::::::::::::::::::::::::::::::::::::::::::::::: OUTPUT OPERATOR OVERLOADING::
 
 std::ostream &	operator<<(std::ostream & o, ScavTrap const & s) {
+	
 	return o << s.getName() << " has " << s.getHitPoints() << " hit points, "
 				<< s.getEnergyPoints() << " energy points, and " 
 				<< s.getAttackDamage() << " attack damage points." << std::endl; 
-
 }

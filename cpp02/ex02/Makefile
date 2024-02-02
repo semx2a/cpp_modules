@@ -6,7 +6,7 @@
 #    By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 19:14:12 by seozcan           #+#    #+#              #
-#    Updated: 2023/02/25 23:02:55 by seozcan          ###   ########.fr        #
+#    Updated: 2024/02/02 15:37:15 by seozcan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ PROJ	:=
 
 ODIR	:=	objs
 
-SDIR	:=	srcs
+SDIR	:=	src
 
 IDIR	:=	inc
 
@@ -26,10 +26,10 @@ NAME	:=	Fixed02
 
 # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::SOURCES::
 
-SRCS	:=	main.cpp \
+SRC	:=	main.cpp \
 			Fixed.cpp
 			
-OBJS	=	$(addprefix $(ODIR)/, $(SRCS:.cpp=.o))
+OBJS	=	$(addprefix $(ODIR)/, $(SRC:.cpp=.o))
 
 # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::COMPILERS::
 
@@ -120,7 +120,7 @@ clean:		header
 
 fclean:		header clean
 	@rm -f $(NAME)
-	@echo "$(HIORANGE)$(NAME) bin:\t\t\t\t\t[RM]$(NO_COLOR)"
+	@echo "$(HIORANGE)$(NAME) bin:\t\t\t\t\t\t[RM]$(NO_COLOR)"
 
 header:
 	@echo "$(BHIPURPLE)"

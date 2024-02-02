@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 14:57:44 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/02 16:22:58 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/04 23:16:33 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ class ClapTrap {
 		ClapTrap(ClapTrap const & src);
 		~ClapTrap(void);
 
-		ClapTrap &	operator=(ClapTrap const & rhs);
+		ClapTrap &		operator=(ClapTrap const & rhs);
 
 		void			setName(std::string const);
 		void			setHitPoints(unsigned int const);
 		void			setEnergyPoints(unsigned int const);
 		void			setAttackDamage(unsigned int const);
 		
-		std::string	getName(void) const;
+		std::string		getName(void) const;
 		unsigned int	getHitPoints(void) const;
 		unsigned int	getEnergyPoints(void) const;
 		unsigned int	getAttackDamage(void) const;
@@ -41,7 +41,7 @@ class ClapTrap {
 		void			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);
 
-	private:
+	protected:
 
 		std::string		_name;
 		unsigned int	_hitPoints;

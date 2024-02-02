@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:32:26 by seozcan           #+#    #+#             */
-/*   Updated: 2023/09/06 13:43:16 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/02 15:36:58 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ class MutantStack : public std::stack <T> {
 		
 };
 
-#include "../srcs/MutantStack.tpp"
+#include "../src/MutantStack.tpp"
 
 #endif

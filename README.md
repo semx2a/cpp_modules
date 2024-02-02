@@ -28,7 +28,6 @@ The exercises covered a wide range of topics, including but not limited to:
 - **Pointers to Members**: Gained a good understanding of pointers to members of classes, which are somewhat different from normal pointers.
 - **Non-member Attributes and Functions**: Worked with non-member attributes and functions, understanding how they can be used in a class context.
 
-
 ## Module 01 - Memory Allocation and References
 
 The objective of this module was to gain a deep understanding of memory allocation, pointers to members, references, and the switch instruction in C++.
@@ -78,7 +77,6 @@ This module focused on learning and implementing principles related to Polymorph
 - **Exercise 02**: This exercise introduced more specific forms that the bureaucrats could fill out, such as `ShrubberyCreationForm`, `RobotomyRequestForm`, and `PresidentialPardonForm`. Each form had a specific action associated with it that the bureaucrats could execute.
 - **Exercise 03**: This exercise introduced an `Intern` class that could create forms for the bureaucrats to fill out. The `Intern` class had a `makeForm` function that took in the name of a form and a target and returned a pointer to a `Form` object.
 
-
 ## Module 06 - C++ Casts
 
 In this module, we dive deep into the concepts of type conversion, or 'casting', in C++. This concept is fundamental to understanding how different data types interact with one another in a C++ program.
@@ -107,7 +105,7 @@ This module focused on Container Templates, Iterators, and Algorithms. In the pr
 
 These exercises helped me understand the different types of containers available in C++, such as sequence containers, associative containers, and derived containers, and their use cases. Additionally, I worked with iterators to manipulate and traverse through these containers, and used various algorithms to perform operations on the container data.
 
-### Skills Gained
+### Acquiered Skills
 
 - Deep understanding of container templates, iterators, and algorithms in C++
 - Proficiency in programming with C++98 standards
@@ -129,9 +127,10 @@ Each exercise had specific instructions and requirements, pushing me to think cr
 
 This module and focuses on the **Standard Template Library (STL)**.
 
-## Skills Gained:
+## Acquiered Skills
 
 **Working with STL:** The project provided a practical understanding of the STL in C++, including containers and algorithms.
+
 - **STL Containers:** The project provided hands-on experience with STL containers such as vector, list, map, and stack.
 - **STL Algorithms:** The project provided hands-on experience with STL algorithms such as find, count, and sort.
 - **STL Iterators:** The project provided hands-on experience with STL iterators such as input iterators, output iterators, forward iterators, and bidirectional iterators.

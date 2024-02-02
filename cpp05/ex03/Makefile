@@ -6,7 +6,7 @@
 #    By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 19:14:12 by seozcan           #+#    #+#              #
-#    Updated: 2023/08/23 17:45:32 by seozcan          ###   ########.fr        #
+#    Updated: 2024/02/02 15:37:15 by seozcan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ PROJ	:=
 
 ODIR	:=	objs
 
-SDIR	:=	srcs
+SDIR	:=	src
 
 IDIR	:=	inc
 
@@ -26,7 +26,7 @@ NAME	:=	Bureaucrat
 
 # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::SOURCES::
 
-SRCS	:=	main.cpp \
+SRC	:=	main.cpp \
 			Bureaucrat.cpp \
 			AForm.cpp \
 			ShrubberyCreationForm.cpp \
@@ -35,7 +35,7 @@ SRCS	:=	main.cpp \
 			Intern.cpp
 			
 			
-OBJS	=	$(addprefix $(ODIR)/, $(SRCS:.cpp=.o))
+OBJS	=	$(addprefix $(ODIR)/, $(SRC:.cpp=.o))
 
 # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::COMPILERS::
 

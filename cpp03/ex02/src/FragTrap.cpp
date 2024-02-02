@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:38:18 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/02 17:26:30 by seozcan          ###   ########.fr       */
+/*   Updated: 2023/03/03 16:12:15 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,8 @@ void	FragTrap::highFivesGuys(void) {
 // ::::::::::::::::::::::::::::::::::::::::::::::: OUTPUT OPERATOR OVERLOADING::
 
 std::ostream &	operator<<(std::ostream & o, FragTrap const & f) {
+	
 	return o << f.getName() << " has " << f.getHitPoints() << " hit points, "
 				<< f.getEnergyPoints() << " energy points, and " 
 				<< f.getAttackDamage() << " attack damage points." << std::endl; 
-
 }
