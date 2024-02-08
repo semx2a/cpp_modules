@@ -6,7 +6,7 @@
 #    By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 19:14:12 by seozcan           #+#    #+#              #
-#    Updated: 2024/02/02 15:37:15 by seozcan          ###   ########.fr        #
+#    Updated: 2024/02/08 16:43:04 by seozcan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ SANFLAG	:=	-fsanitize=address
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::COLORS::
 
-NO_COLOR		=	\033[m
+RESET		=	\033[m
 
 BLACK			=	\033[0;30m
 RED				=	\033[0;31m
@@ -90,17 +90,17 @@ all:			header h2 message $(NAME)
 
 $(ODIR)/%.o:	%.cpp
 	@$(CPP) $(WFLAGS) $(INCLUDE_FLAGS) -c $< -o $@ 
-	@echo "$(HIGREEN)compilation:\t\t\t\t\t\t[OK]$(NO_COLOR)"
+	@echo "$(HIGREEN)compilation:\t\t\t\t\t\t[OK]$(RESET)"
 
 $(NAME):		$(OBJS)	
 	@$(CPP) $(WFLAGS) $(OBJS) -o $(NAME)
-	@echo "$(HIGREEN)mandatory exe:\t\t\t\t\t\t[OK]$(NO_COLOR)"
+	@echo "$(HIGREEN)mandatory exe:\t\t\t\t\t\t[OK]$(RESET)"
 
 $(OBJS):		| $(ODIR)
 
 $(ODIR):
 	@mkdir -p $(ODIR)
-	@echo "$(HIGREEN)objs folder:\t\t\t\t\t\t[OK]$(NO_COLOR)"
+	@echo "$(HIGREEN)objs folder:\t\t\t\t\t\t[OK]$(RESET)"
 	
 
 # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::RULES::
@@ -113,15 +113,15 @@ push:		header fclean
 	@git add .
 	@git commit --quiet
 	@git push --quiet
-	@echo "$(HIGREEN)git push:\t\t\t\t\t\t[OK]$(NO_COLOR)"
+	@echo "$(HIGREEN)git push:\t\t\t\t\t\t[OK]$(RESET)"
 
 clean:		header
 	@rm -rf $(ODIR)
-	@echo "$(HIORANGE)objs folder:\t\t\t\t\t\t[RM]$(NO_COLOR)"
+	@echo "$(HIORANGE)objs folder:\t\t\t\t\t\t[RM]$(RESET)"
 
 fclean:		header clean
 	@rm -f $(NAME)
-	@echo "$(HIORANGE)$(NAME) bin:\t\t\t\t\t[RM]$(NO_COLOR)"
+	@echo "$(HIORANGE)$(NAME) bin:\t\t\t\t\t[RM]$(RESET)"
 
 header:
 	@echo "$(BHIPURPLE)"
@@ -133,17 +133,17 @@ header:
 	@echo " \     \  \/__/  \/__/  \/__/ /__/  \/__/ \/__/  \/______/   \ "
 	@echo "  \     \_____________________________________________________\ "
 	@echo "   \    /                                                     / "
-	@echo "    \  /                   $(CYAN)S E O Z C A N           \$(NO_COLOR)$(BHIPURPLE)   ____   / "
+	@echo "    \  /                   $(CYAN)S E O Z C A N           \$(RESET)$(BHIPURPLE)   ____   / "
 	@echo "     \/______________________________________________/\   \_/ "
 	@echo "                                                     \ \___\ "
 	@echo "                                                      \/___/ "
-	@echo "$(NO_COLOR)"
+	@echo "$(RESET)"
 
 h2:
-	@echo "\n$(BHIPURPLE):::::::::::::::::::::::::::::::::::::::::::::::::::::::CPP::\n$(NO_COLOR)"
+	@echo "\n$(BHIPURPLE):::::::::::::::::::::::::::::::::::::::::::::::::::::::CPP::\n$(RESET)"
 
 message:
-	@make -q $(NAME) && echo "$(BHIGREEN)All files are already up to date$(NO_COLOR)" || true
+	@make -q $(NAME) && echo "$(BHIGREEN)All files are already up to date$(RESET)" || true
 
 re:		header fclean 
 	@make all 

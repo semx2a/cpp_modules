@@ -6,7 +6,7 @@
 #    By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 19:14:12 by seozcan           #+#    #+#              #
-#    Updated: 2024/02/02 15:37:15 by seozcan          ###   ########.fr        #
+#    Updated: 2024/02/08 16:43:04 by seozcan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ SANFLAG	:=	-fsanitize=address
 
 # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::COLORS::
 
-NO_COLOR		=	\033[m
+RESET		=	\033[m
 
 BLACK			=	\033[0;30m
 RED				=	\033[0;31m
@@ -93,17 +93,17 @@ all:			header h2 message $(NAME)
 
 $(ODIR)/%.o:	%.cpp
 	@$(CPP) $(WFLAGS) $(INCLUDE_FLAGS) -c $< -o $@ 
-	@echo "$(HIGREEN)compilation:[OK]$(NO_COLOR)" | awk -F ':' '{ printf "%-61s %s\n", $$1 ":", $$2 }'
+	@echo "$(HIGREEN)compilation:[OK]$(RESET)" | awk -F ':' '{ printf "%-61s %s\n", $$1 ":", $$2 }'
 
 $(NAME):		$(OBJS)	
 	@$(CPP) $(WFLAGS) $(OBJS) -o $(NAME)
-	@echo "$(HIGREEN)mandatory exe:[OK]$(NO_COLOR)" | awk -F ':' '{ printf "%-61s %s\n", $$1 ":", $$2 }'
+	@echo "$(HIGREEN)mandatory exe:[OK]$(RESET)" | awk -F ':' '{ printf "%-61s %s\n", $$1 ":", $$2 }'
 
 $(OBJS):		| $(ODIR)
 
 $(ODIR):
 	@mkdir -p $(ODIR)
-	@echo "$(HIGREEN)objs folder:[OK]$(NO_COLOR)" | awk -F ':' '{ printf "%-61s %s\n", $$1 ":", $$2 }'
+	@echo "$(HIGREEN)objs folder:[OK]$(RESET)" | awk -F ':' '{ printf "%-61s %s\n", $$1 ":", $$2 }'
 	
 
 # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::RULES::
@@ -116,15 +116,15 @@ push:		header fclean
 	@git add .
 	@git commit --quiet
 	@git push --quiet
-	@echo "$(HIGREEN)git push:[OK]$(NO_COLOR)" | awk -F ':' '{ printf "%-61s %s\n", $$1 ":", $$2 }'
+	@echo "$(HIGREEN)git push:[OK]$(RESET)" | awk -F ':' '{ printf "%-61s %s\n", $$1 ":", $$2 }'
 
 clean:		header
 	@rm -rf $(ODIR)
-	@echo "$(HIORANGE)objs folder:[RM]$(NO_COLOR)" | awk -F ':' '{ printf "%-61s %s\n", $$1 ":", $$2 }'
+	@echo "$(HIORANGE)objs folder:[RM]$(RESET)" | awk -F ':' '{ printf "%-61s %s\n", $$1 ":", $$2 }'
 
 fclean:		header clean
 	@rm -f $(NAME)
-	@echo "$(HIORANGE)$(NAME) bin:[RM]$(NO_COLOR)" | awk -F ':' '{ printf "%-61s %s\n", $$1 ":", $$2 }'
+	@echo "$(HIORANGE)$(NAME) bin:[RM]$(RESET)" | awk -F ':' '{ printf "%-61s %s\n", $$1 ":", $$2 }'
 
 header:
 	@echo "$(BHIPURPLE)"
@@ -136,17 +136,17 @@ header:
 	@echo " \     \  \/__/  \/__/  \/__/ /__/  \/__/ \/__/  \/______/   \ "
 	@echo "  \     \_____________________________________________________\ "
 	@echo "   \    /                                                     / "
-	@echo "    \  /                   $(CYAN)S E O Z C A N           \$(NO_COLOR)$(BHIPURPLE)   ____   / "
+	@echo "    \  /                   $(CYAN)S E O Z C A N           \$(RESET)$(BHIPURPLE)   ____   / "
 	@echo "     \/______________________________________________/\   \_/ "
 	@echo "                                                     \ \___\ "
 	@echo "                                                      \/___/ "
-	@echo "$(NO_COLOR)"
+	@echo "$(RESET)"
 
 h2:
-	@echo "\n$(BHIPURPLE):::::::::::::::::::::::::::::::::::::::::::::::::::::::CPP::\n$(NO_COLOR)"
+	@echo "\n$(BHIPURPLE):::::::::::::::::::::::::::::::::::::::::::::::::::::::CPP::\n$(RESET)"
 
 message:
-	@make -q $(NAME) && echo "$(BHIGREEN)All files are already up to date$(NO_COLOR)" || true
+	@make -q $(NAME) && echo "$(BHIGREEN)All files are already up to date$(RESET)" || true
 
 re:		header fclean 
 	@make all 

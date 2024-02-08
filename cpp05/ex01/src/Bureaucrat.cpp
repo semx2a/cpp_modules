@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 17:02:05 by seozcan           #+#    #+#             */
-/*   Updated: 2023/08/24 16:37:43 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/08 16:43:04 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Bureaucrat &	Bureaucrat::operator=(Bureaucrat const & rhs) {
 		std::cerr << ORANGE << std::endl;
 		std::cerr << "Warning: Bureaucrat operator= called" << std::endl;
 		std::cerr << "Cannot assign Bureaucrat a name: const value" << std::endl;
-		std::cerr << NO_COLOR << std::endl;
+		std::cerr << RESET << std::endl;
 		this->setGrade(rhs.getGrade());
 	}
 	
@@ -116,8 +116,8 @@ void			Bureaucrat::signForm(Form & form) {
 	try {
 	
 		form.beSigned(*this);
-		std::clog << "Bureaucrat " << ORANGE << this->getName() << NO_COLOR
-		<< " signed Form " << ORANGE << form.getName() << NO_COLOR << std::endl;
+		std::clog << "Bureaucrat " << ORANGE << this->getName() << RESET
+		<< " signed Form " << ORANGE << form.getName() << RESET << std::endl;
 	}
 	catch (std::exception &e) {
 

@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 16:31:47 by seozcan           #+#    #+#             */
-/*   Updated: 2023/09/11 18:47:17 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/08 16:43:04 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ PmergeMe::PmergeMe(int ac, char **av) {
 	std::transform(av + 1, av + ac, std::back_inserter(this->_vec), std::atoi);
 	std::transform(av + 1, av + ac, std::back_inserter(this->_list), std::atoi);
 
-	this->_buf << GREEN << "Before std::vector:\t" << print(this->_vec) << NO_COLOR << std::endl;
-	this->_buf << PURPLE << "Before std::list:\t" << print(this->_list) << NO_COLOR << std::endl;
+	this->_buf << GREEN << "Before std::vector:\t" << print(this->_vec) << RESET << std::endl;
+	this->_buf << PURPLE << "Before std::list:\t" << print(this->_list) << RESET << std::endl;
 
 	this->setSize(this->_vec.size(), VECTOR);
 	this->setSize(this->_list.size(), LIST);	
@@ -148,10 +148,10 @@ std::string	PmergeMe::display(void) const {
 	std::stringstream s;
 	
 	s << this->_buf.str();
-	s << GREEN << "After std::vector:\t" << print(this->getVec()) << NO_COLOR << std::endl;
-	s << PURPLE << "After std::list:\t" << print(this->getList()) << NO_COLOR << std::endl;
-	s << GREEN << "Time to process a range of " << this->getSize(VECTOR) << " elements with std::vector: " << this->_getTimeMicro(VECTOR) << NO_COLOR << std::endl;
-	s << PURPLE << "Time to process a range of " << this->getSize(LIST) << " elements with std::list: " << this->_getTimeMicro(LIST) << NO_COLOR << std::endl;
+	s << GREEN << "After std::vector:\t" << print(this->getVec()) << RESET << std::endl;
+	s << PURPLE << "After std::list:\t" << print(this->getList()) << RESET << std::endl;
+	s << GREEN << "Time to process a range of " << this->getSize(VECTOR) << " elements with std::vector: " << this->_getTimeMicro(VECTOR) << RESET << std::endl;
+	s << PURPLE << "Time to process a range of " << this->getSize(LIST) << " elements with std::list: " << this->_getTimeMicro(LIST) << RESET << std::endl;
 
 	return s.str();
 }

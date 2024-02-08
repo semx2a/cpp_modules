@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 13:42:52 by seozcan           #+#    #+#             */
-/*   Updated: 2023/08/24 16:46:31 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/08 16:43:04 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ Form &	Form::operator=(Form const & rhs) {
 		std::cerr << "Cannot assign Form a name: const value" << std::endl;
 		std::cerr << "Cannot assign Form a signGrade: const value" << std::endl;
 		std::cerr << "Cannot assign Form a execGrade: const value" << std::endl;	
-		std::cerr << NO_COLOR << std::endl;
+		std::cerr << RESET << std::endl;
 		this->setIsSigned(rhs.getIsSigned());
 	}
 	return *this;
@@ -93,15 +93,15 @@ std::string		Form::announce(void) const {
 	sstream << "Form "
 	<< GREEN
 	<< this->getName() 
-	<< NO_COLOR
+	<< RESET
 	<< ", can be signed by Bureacrats with grade " 
 	<< GREEN
 	<< this->getSignGrade()
-	<< NO_COLOR
+	<< RESET
 	<< " and can be executed by Bureaucrats with grade " 
 	<< GREEN
 	<< this->getExecGrade()
-	<< NO_COLOR;
+	<< RESET;
 	str = sstream.str();
 
 	return str;

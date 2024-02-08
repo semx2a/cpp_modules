@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 18:48:21 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/05 17:14:01 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/08 16:43:04 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "../inc/Cat.hpp"
 #include "../inc/Dog.hpp"
 
-#define NO_COLOR	"\033[m"
+#define RESET	"\033[m"
 #define BHIGREEN	"\033[1;92m"
 #define BHIORANGE	"\033[1;93m"
 #define BHIPURPLE	"\033[1;95m"
@@ -26,7 +26,7 @@ int	main()
 	const Animal* i	= new Cat();
 	const Animal* j	= new Dog();
 
-	std::cout << std::endl << BHIGREEN <<"Make sound tests:" << NO_COLOR << std::endl;
+	std::cout << std::endl << BHIGREEN <<"Make sound tests:" << RESET << std::endl;
 
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
@@ -35,7 +35,7 @@ int	main()
 	delete i;
 	delete j;
 	
-	std::cout << std::endl << BHIORANGE << "Animal array containing dogs and cats:" << NO_COLOR << std::endl;
+	std::cout << std::endl << BHIORANGE << "Animal array containing dogs and cats:" << RESET << std::endl;
 	//Animal array test
 	const Animal* meta[20];
 	
@@ -54,7 +54,7 @@ int	main()
 	}
 
 	//Deep copy test
-	std::cout << std::endl << BHIPURPLE << "Deep copy tests" << NO_COLOR << std::endl;
+	std::cout << std::endl << BHIPURPLE << "Deep copy tests" << RESET << std::endl;
 	Dog basic;
 	{
 		Dog tmp = basic;

@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 18:07:20 by seozcan           #+#    #+#             */
-/*   Updated: 2023/08/24 14:53:23 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/08 16:43:04 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	displayHeader(std::string color, std::string title) {
 	std::stringstream	buf;
 
 	buf << color << std::setfill(':') << std::setw(59); 
-	buf << title << NO_COLOR << std::endl;
+	buf << title << RESET << std::endl;
 
 	std::cout << buf.str();
 }

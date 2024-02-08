@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 18:25:42 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/05 17:16:09 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/08 16:43:04 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 Cat::Cat(void) { 
 
-    std::cout << BHIORANGE << "Cat " << NO_COLOR << "constructor" << std::endl;
+    std::cout << BHIORANGE << "Cat " << RESET << "constructor" << std::endl;
         
     this->setType("Cat");
     this->_noggin = new Brain();
@@ -35,7 +35,7 @@ Cat::Cat(Cat const & src) {
 
 Cat::~Cat(void) {
 
-    std::cout << BHIORANGE << "Cat " << NO_COLOR <<  "destructor" << std::endl;
+    std::cout << BHIORANGE << "Cat " << RESET <<  "destructor" << std::endl;
 
     delete this->getBrain();
 }
@@ -64,7 +64,7 @@ Brain*      Cat::getBrain(void) const { return this->_noggin; }
 
 void Cat::makeSound(void) const {
     
-    std::cout << BHIORANGE << this->getType() << NO_COLOR << " says \"Meow\"" << std::endl;
+    std::cout << BHIORANGE << this->getType() << RESET << " says \"Meow\"" << std::endl;
 }
 
 // ::::::::::::::::::::::::::::::::::::::::::::::: OUTPUT OPERATOR OVERLOADING::

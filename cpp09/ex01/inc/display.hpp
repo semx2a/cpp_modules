@@ -1,7 +1,7 @@
 #ifndef DISPLAY_HPP
 # define DISPLAY_HPP
 
-# define NO_COLOR	"\033[m "
+# define RESET	"\033[m "
 
 # define BLACK 		"\033[0;30m "
 # define RED 		"\033[0;31m "

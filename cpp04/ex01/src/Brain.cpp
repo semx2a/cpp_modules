@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 18:25:42 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/05 17:02:40 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/08 16:43:04 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 Brain::Brain(void) {
     
-    std::cout << BHIPURPLE <<"Brain " << NO_COLOR << "constructor" << std::endl;
+    std::cout << BHIPURPLE <<"Brain " << RESET << "constructor" << std::endl;
 
     this->_ideas = new std::string[100];
     
@@ -42,7 +42,7 @@ Brain::Brain(Brain const & src) {
 
 Brain::~Brain(void) {
 
-    std::cout << BHIPURPLE << "Brain " << NO_COLOR << "destructor" << std::endl;
+    std::cout << BHIPURPLE << "Brain " << RESET << "destructor" << std::endl;
 
     delete [] this->getIdeas();
 }

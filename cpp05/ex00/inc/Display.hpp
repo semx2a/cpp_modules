@@ -6,14 +6,14 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 16:31:12 by seozcan           #+#    #+#             */
-/*   Updated: 2023/08/21 19:00:00 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/08 16:43:04 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DISPLAY_HPP
 # define DISPLAY_HPP
 
-# define NO_COLOR	"\033[m"
+# define RESET	"\033[m"
 
 # define BLACK 		"\033[0;30m"
 # define RED 		"\033[0;31m"

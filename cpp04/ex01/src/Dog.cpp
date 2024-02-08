@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 18:25:42 by seozcan           #+#    #+#             */
-/*   Updated: 2023/03/05 17:17:02 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/08 16:43:04 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 Dog::Dog(void) { 
     
-    std::cout << BHIGREEN << "Dog " << NO_COLOR << "constructor" << std::endl;
+    std::cout << BHIGREEN << "Dog " << RESET << "constructor" << std::endl;
     
     this->setType("Dog");
     this->_noggin = new Brain();
@@ -35,7 +35,7 @@ Dog::Dog(Dog const & src) {
 
 Dog::~Dog(void) { 
     
-    std::cout << BHIGREEN << "Dog " << NO_COLOR << "destructor" << std::endl;
+    std::cout << BHIGREEN << "Dog " << RESET << "destructor" << std::endl;
 
     delete this->getBrain();
 }
@@ -64,7 +64,7 @@ Brain*      Dog::getBrain(void) const { return this->_noggin; }
 
 void Dog::makeSound(void) const {
     
-    std::cout << BHIGREEN << this->getType() << NO_COLOR << " says \"Waf\"" << std::endl;
+    std::cout << BHIGREEN << this->getType() << RESET << " says \"Waf\"" << std::endl;
 }
 
 // ::::::::::::::::::::::::::::::::::::::::::::::: OUTPUT OPERATOR OVERLOADING::

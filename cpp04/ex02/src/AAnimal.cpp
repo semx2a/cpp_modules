@@ -19,7 +19,7 @@
 
 AAnimal::AAnimal(void) : _type("AAnimal") {
 
-    std::cout << BHIBLUE <<"AAnimal " << NO_COLOR << "constructor" << std::endl;
+    std::cout << BHIBLUE <<"AAnimal " << RESET << "constructor" << std::endl;
  }
 
 AAnimal::AAnimal(std::string const type) :_type(type) { }
@@ -28,7 +28,7 @@ AAnimal::AAnimal(AAnimal const & src) { *this = src; }
 
 AAnimal::~AAnimal(void) {
 
-    std::cout << BHIBLUE << "AAnimal " << NO_COLOR "destructor" << std::endl;
+    std::cout << BHIBLUE << "AAnimal " << RESET "destructor" << std::endl;
 }
 
 AAnimal &	AAnimal::operator=(AAnimal const & rhs) {
@@ -50,7 +50,7 @@ std::string AAnimal::getType(void) const { return this->_type; }
 
 void AAnimal::makeSound(void) const {
     
-    std::cout << BHIBLUE << this->getType() << NO_COLOR <<" says \"GrrrRRRrrrRRRrrr\"" << std::endl;
+    std::cout << BHIBLUE << this->getType() << RESET <<" says \"GrrrRRRrrrRRRrrr\"" << std::endl;
 }
 
 // ::::::::::::::::::::::::::::::::::::::::::::::: OUTPUT OPERATOR OVERLOADING::
